@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { LibreriaContext } from "./context/LibreriaContext";
+import { BibliotecaRouter } from "./router/BibliotecaRouter";
+import { Header } from "./components/Header";
 
 function App() {
+  const [globalClicks, setGlobalClicks] = useState(0);
+
+  let updateClicks = () => {
+    setGlobalClicks(globalClicks + 1);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <>
+        <Header></Header>
+        <LibreriaContext.Provider value={{ globalClicks, updateClicks }}>
+          <BibliotecaRouter></BibliotecaRouter>
+        </LibreriaContext.Provider>
+      </>
   );
 }
 
