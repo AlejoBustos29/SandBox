@@ -6,8 +6,8 @@ function NotFound() {
     return (
         <div className="principal">
             <p>Página no encontrada</p>
-            <Link to={"/"}> {/* Añadimos un enlace a la vista de restaurantes */}
-                <h1>Volver a la página inicial</h1>
+            <Link to={"/"}> {}
+                <h1>Volver a la página principal</h1>
             </Link>
         </div>
     );

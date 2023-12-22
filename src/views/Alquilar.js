@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import {Link} from "react-router-dom";
 
 function Alquilar() {
@@ -12,7 +12,7 @@ function Alquilar() {
         <div className="principal">
             <p>Cuántos libros deseas alquilar?</p>
             <button onClick={() => setClicks(clicks + 1)}>{clicks}</button>
-            <Link to={"/"}> {/* Añadimos un enlace a la vista de restaurantes */}
+            <Link to={"/"}> {}
                 <h1>Confirmar alquiler</h1>
             </Link>
         </div>
