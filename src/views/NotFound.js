@@ -7,7 +7,7 @@ function NotFound() {
         <div className="principal">
             <p>Página no encontrada</p>
             <Link to={"/"}> {/* Añadimos un enlace a la vista de restaurantes */}
-                <h1>Volver a página inicial</h1>
+                <h1>Volver a la página inicial</h1>
             </Link>
         </div>
     );
