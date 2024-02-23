@@ -18,13 +18,14 @@ export const Overview = () => {
             <div className="libreria-container">
                 {books.map((libro, index) => (
                     <Book
-                        key={index}
                         title={libro.title}
                         author={libro.author}
                         age={libro.age}
                         isbn={libro.isbn}
                         synapsis={libro.synapsis}
                         stock={libro.stock}
+                        gender={libro.gender}
+                        image={libro.image}
                     />
                 ))}
             </div>
