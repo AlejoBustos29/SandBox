@@ -56,3 +56,10 @@ body {
     text-align: center;
     margin: 10px;
 }
+
+.card-image{
+    border-radius: 10px;
+    background-color: #61dafb;
+    width: 180px;
+    height: 200px;
+}
