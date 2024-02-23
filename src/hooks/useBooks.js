@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 
-export const useBooks = (param) => {
+export const  useBooks = (param) => {
 
     const [books, setBooks] = useState([]);
     /**
@@ -8,21 +8,23 @@ export const useBooks = (param) => {
      * del back-end en el primer renderizado.
      */
     useEffect(() => {
-        fetch("https://spring-cloud-gateway-production-9eb3.up.railway.app" + "/ms-library-books/books", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(param),
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                console.log("Success:", data);
-                setBooks(data);
+        setTimeout( () => {
+            fetch("https://spring-cloud-gateway-production-9eb3.up.railway.app" + "/ms-library-books/books", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(param),
             })
-            .catch((error) => {
-                console.error("Error:", error);
-            });
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log("Success:", data.products);
+                    setBooks(data.products);
+                })
+                .catch((error) => {
+                    console.error("Error:", error);
+                });
+        },2500);
 
     }, []);
 
