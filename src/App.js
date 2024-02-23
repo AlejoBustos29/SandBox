@@ -1,21 +1,19 @@
 import { useState } from "react";
-import { LibreriaContext } from "./context/LibreriaContext";
+import { BookContext } from "./context/BookContext";
 import { BibliotecaRouter } from "./router/BibliotecaRouter";
 import { Header } from "./components/Header";
+import {useBooks} from "./hooks/useBooks";
 
 function App() {
-  const [globalClicks, setGlobalClicks] = useState(0);
 
-  let updateClicks = () => {
-    setGlobalClicks(globalClicks + 1);
-  };
-
+  const param = {"targetMethod":"GET"};
+  const books = useBooks(param);
   return (
       <>
         <Header></Header>
-        <LibreriaContext.Provider value={{ globalClicks, updateClicks }}>
+        <BookContext.Provider value={{ books }}>
           <BibliotecaRouter></BibliotecaRouter>
-        </LibreriaContext.Provider>
+        </BookContext.Provider>
       </>
   );
 }
